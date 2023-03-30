@@ -1,7 +1,7 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 import { HomeLayout } from './layouts/Home';
 import { SideLessHomeLayout } from './layouts/SideLessHome';
-import { SimpleLayout } from './layouts/Simpole';
+import { SimpleLayout } from './layouts/Simple';
 
 export const RootRouter = () => {
   return useRoutes([
