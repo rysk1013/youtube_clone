@@ -1,6 +1,7 @@
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Logo } from '../../components/Logo';
+import { SearchBar } from './SearchBar';
 // export defaultしているので、import側でuseStylesと命名
 import useStyles from './style';
 
@@ -21,6 +22,8 @@ export const DashboardHeader = () => {
         <div className={styles.logo}>
           <Logo />
         </div>
+        {/* 検索バー */}
+        <SearchBar />
       </Toolbar>
     </AppBar>
   );
