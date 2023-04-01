@@ -7,10 +7,9 @@ export const HomeLayout = () => {
   const styles = useStyles();
 
   return (
-    <div>
+    <div className={styles.root}>
       {/* DashboardHeaderコンポーネントを表示 */}
       <DashboardHeader />
-      <div className={styles.flex}>
         {/* Sidebarコンポーネントを表示 */}
         <div className={styles.sidebar}>
           <Sidebar />
@@ -22,7 +21,6 @@ export const HomeLayout = () => {
         <div className={styles.main}>
           <Outlet />
         </div>
-      </div>
     </div>
   )
 };
