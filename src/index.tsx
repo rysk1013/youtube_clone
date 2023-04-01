@@ -8,6 +8,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 // Material-UIの「テーマ」を作成する
 // Material-UIのテーマ（色など）をカスタマイズする際には、createThemeの引数にカスタマイズ項目を渡す
 // 今回は何もカスタマイズしないので、何も指定していない
+import GlobalStyle from './GlobalStyle';
 const theme = createTheme();
 
 ReactDOM.render(
@@ -16,6 +17,8 @@ ReactDOM.render(
       <BrowserRouter>
         {/*  ブラウザの違いを吸収し、どのデバイスでも同じように表示する用のCSSを使用する */}
         <CssBaseline />
+        {/* アプリ全体の特殊なグローバルスタイリング */}
+        <GlobalStyle />
         <RootRouter />
       </BrowserRouter>
     </ThemeProvider>
