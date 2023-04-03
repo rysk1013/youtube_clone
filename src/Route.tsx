@@ -2,6 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import { HomeLayout } from './layouts/Home';
 import { SideLessHomeLayout } from './layouts/SideLessHome';
 import { SimpleLayout } from './layouts/Simple';
+import { Home } from './pages/Home';
 
 export const RootRouter = () => {
   return useRoutes([
@@ -10,7 +11,8 @@ export const RootRouter = () => {
       // elementに指定したコンポーネントをページのレイアウトデザインとして使用する
       element: <HomeLayout />,
       // childrenでは、pathに指定したURLで、使用するコンポーネントを指定する
-      children: [{ path: '/', element: <div>Home</div>}],
+      // "element"に<Home />を指定して、URL`/`にアクセスした時にどのコンポーネントを呼び出す
+      children: [{ path: '/', element: <Home />}],
     },
     {
       // Headerのみのデザインのページ
