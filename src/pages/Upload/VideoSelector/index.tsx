@@ -1,7 +1,10 @@
 import { useState, useRef, ChangeEvent, useEffect } from 'react';
 import { Button, CardMedia, Typography, Grid } from '@material-ui/core';
+import useStyles from './style';
 
 export const VideoSelect = () => {
+  const styles = useStyles();
+
   const [file, setFile] = useState<File>();
 
   // 動画表示用のURLを格納
@@ -78,7 +81,7 @@ export const VideoSelect = () => {
   }, [file]);
 
   return (
-    <div>
+    <div className={styles.root}>
       {/*
         React流のif文の記述方法
         if(videoURL){<CardMedia />}と同じ意味
@@ -86,13 +89,13 @@ export const VideoSelect = () => {
         {}で囲む必要がある
       */}
       {videoURL && (
-        <div>
+        <div className={styles.full}>
           <CardMedia component='video' src={videoURL} controls />
 
           {/* サムネイルを表示 */}
-          <Typography>サムネイル</Typography>
+          <Typography className={styles.textPadding}>サムネイル</Typography>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className={styles.thumbnailContent}>
             {/* 配列の中身を同じコンポーネントで複数表示する場合の記法 */}
             {thumbnailURLs.map((url) => {
               return (
@@ -111,7 +114,7 @@ export const VideoSelect = () => {
       */}
       <input type="file" hidden ref={inputRef} onChange={selectedFile} />
       {/* videoURLがセットされたら、ボタンを非表示 */}
-      { !videoURL && <Button onClick={handleClick}>ファイルを選択</Button> }
+      { !videoURL && <Button variant='contained' color='primary' onClick={handleClick}>ファイルを選択</Button> }
     </div>
   );
 };
