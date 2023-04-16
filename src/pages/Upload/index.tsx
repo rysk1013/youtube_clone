@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 
 import { VideoSelect } from './VideoSelector';
+import { UploadForm } from './UploadForm';
 
 export const Upload = () => {
   return (
@@ -36,7 +37,8 @@ export const Upload = () => {
           <Divider orientation='vertical' flexItem />
 
           <Grid xs item>
-            右側
+            {/* UploadFormコンポーネントを表示 */}
+            <UploadForm />
           </Grid>
         </Grid>
       </DialogContent>
