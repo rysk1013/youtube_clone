@@ -3,6 +3,7 @@ import { HomeLayout } from './layouts/Home';
 import { SideLessHomeLayout } from './layouts/SideLessHome';
 import { SimpleLayout } from './layouts/Simple';
 import { Home } from './pages/Home';
+import { Upload } from './pages/Upload';
 import { Watch } from './pages/Watch';
 
 export const RootRouter = () => {
@@ -13,7 +14,11 @@ export const RootRouter = () => {
       element: <HomeLayout />,
       // childrenでは、pathに指定したURLで、使用するコンポーネントを指定する
       // "element"に<Home />を指定して、URL`/`にアクセスした時にどのコンポーネントを呼び出す
-      children: [{ path: '/', element: <Home />}],
+      children: [
+        { path: '/', element: <Home /> },
+        // HeaderとSidebarがあるレイアウトのため、HomeLayoutが指定しているelementでuploadを呼び出している
+        { path: 'upload', element: <Upload />}
+      ],
     },
     {
       // Headerのみのデザインのページ
