@@ -11,7 +11,7 @@ export const UploadForm = () => {
         <TextField size='small' fullWidth variant='outlined' />
       </label>
 
-      <label> className={styles.label}
+      <label className={styles.label}>
         <Typography variant='body2'>説明</Typography>
 
         {/* <textarea>のような入力を作るために、multilineとrows={4}を指定 */}
