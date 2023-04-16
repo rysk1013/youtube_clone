@@ -8,8 +8,11 @@ import {
 
 import { VideoSelect } from './VideoSelector';
 import { UploadForm } from './UploadForm';
+import useStyles from './style';
 
 export const Upload = () => {
+  const styles = useStyles();
+
   return (
     // ダイアログコンポーネント
     // fullWidth: trueの場合、画面いっぱいにダイアログを表示する
@@ -26,7 +29,7 @@ export const Upload = () => {
         コンテント用のコンポーネント
         2カラムのレイアウトを実装する
       */}
-      <DialogContent>
+      <DialogContent className={styles.body}>
         <Grid container spacing={4}>
           <Grid xs item>
             {/* VideoSelectコンポーネントを表示 */}
