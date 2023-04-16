@@ -1,4 +1,12 @@
-import { Dialog, DialogTitle, DialogContent, Divider } from '@material-ui/core';
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  Grid,
+  Divider,
+} from '@material-ui/core';
+
+import { VideoSelect } from './VideoSelector';
 
 export const Upload = () => {
   return (
@@ -13,8 +21,25 @@ export const Upload = () => {
       {/* 横線コンポーネント */}
       <Divider />
 
-      {/* コンテント用のコンポーネント */}
-      <DialogContent>ダイアログのコンテンツを作成</DialogContent>
+      {/*
+        コンテント用のコンポーネント
+        2カラムのレイアウトを実装する
+      */}
+      <DialogContent>
+        <Grid container spacing={4}>
+          <Grid xs item>
+            {/* VideoSelectコンポーネントを表示 */}
+            <VideoSelect />
+          </Grid>
+
+          {/* 真ん中に縦線を挿入 */}
+          <Divider orientation='vertical' flexItem />
+
+          <Grid xs item>
+            右側
+          </Grid>
+        </Grid>
+      </DialogContent>
     </Dialog>
   );
 };
