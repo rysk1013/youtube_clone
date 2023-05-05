@@ -7,6 +7,7 @@ import { Upload } from './pages/Upload';
 import { Watch } from './pages/Watch';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
+import { ForgetPasswordForm } from './pages/ForgetPasswordForm';
 
 export const RootRouter = () => {
   return useRoutes([
@@ -36,7 +37,7 @@ export const RootRouter = () => {
       children: [
         { path: 'login', element: <Login /> },
         { path: 'signup', element: <Signup /> },
-        { path: 'forget', element: <div>パスワードリセット</div> },
+        { path: 'forget', element: <ForgetPasswordForm /> },
         { path: '404', element: <div>Not Found</div> },
 
         // pathに"*"を指定することで、「全て」のURLとして指定する
