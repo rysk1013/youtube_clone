@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { Upload } from './pages/Upload';
 import { Watch } from './pages/Watch';
 import { Login } from './pages/Login';
+import { Signup } from './pages/Signup';
 
 export const RootRouter = () => {
   return useRoutes([
@@ -34,7 +35,7 @@ export const RootRouter = () => {
       element: <SimpleLayout />,
       children: [
         { path: 'login', element: <Login /> },
-        { path: 'signup', element: <div>新規作成</div> },
+        { path: 'signup', element: <Signup /> },
         { path: 'forget', element: <div>パスワードリセット</div> },
         { path: '404', element: <div>Not Found</div> },
 
